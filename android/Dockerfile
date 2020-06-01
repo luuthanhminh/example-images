@@ -66,7 +66,7 @@ RUN JQ_URL="https://circle-downloads.s3.amazonaws.com/circleci-images/cache/linu
 #>    /usr/local/bin/dockerd
 
 RUN set -ex \
-  && export DOCKER_VERSION=docker-19.03.10.tgz \
+  && export DOCKER_VERSION=docker-19.03.11.tgz \
   && DOCKER_URL="https://download.docker.com/linux/static/stable/x86_64/${DOCKER_VERSION}" \
   && echo Docker URL: $DOCKER_URL \
   && curl --silent --show-error --location --fail --retry 3 --output /tmp/docker.tgz "${DOCKER_URL}" \
@@ -202,7 +202,7 @@ RUN sdkmanager \
   "build-tools;29.0.3"
 
 # API_LEVEL string gets replaced by m4
-RUN sdkmanager "platforms;android-23"
+RUN sdkmanager "platforms;android-27"
 
 ARG ndk_version=android-ndk-r20
 ARG android_ndk_home=/opt/android/${ndk_version}
